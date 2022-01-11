@@ -1,0 +1,86 @@
+<!-- Justin Cotes Dropulator web app-->
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <title>Drop Grades Calculator</title>
+
+    <!-- title icon -->
+    <link rel="icon" type="image/x-icon" href="/Users/justin/desktop/dropulator/images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<!-- This is the body -->
+
+<body>
+    <script src='/Users/justin/Desktop/dropulator/calculate.js'>
+    </script>
+
+
+    <!-- Heading -->
+    <div style="background-color:lightblue;color:black">
+
+        <h1 style="font-size:100;font-family:verdana;text-align:center;" title="Its a calculator">THE DROPULATOR</h1>
+
+    </div>
+    <!--1-->
+
+
+    <!---- Paragraph -->
+    <div style="text-align:center;font-size:22px">
+
+        <p id='bruh'>To configure the calculator: <br>
+            *<strong>All</strong> assignments must be of the same category/weight*<br>
+            -Fill in Assignment Amount<br>
+            -Enter each grade
+        </p>
+    </div>
+
+    <div style='background-color:grey;'>
+
+        <!-- this is the calculator input portion -->
+        <input type='text' id='numberOfGrades' value='# of Assignments'>
+        <button type='button' id='calculateButton' onclick="buildTable('my-table')">
+            Generate Table</button>
+        <input type='text' id='dropAmount' value='# being dropped'>
+        <script>
+            var input = document.getElementById("numberOfGrades");
+            input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("calculateButton").click();
+                }
+            });
+        </script>
+        <style>
+            td {
+                border: 1px solid black;
+                text-align: center;
+            }
+        </style>
+        <table id="my-table" style='border:1px solid black'>
+            <tr>
+                <td><input type='text' value='xx'><label style="color:gold" ;>%</label></td>
+            </tr>
+            <tr>
+                <td><input type='text' value='xx'><label style="color:gold" ;>%</label></td>
+            </tr>
+            <tr>
+                <td><input type='text' value='xx'><label style="color:gold" ;>%</label></td>
+            </tr>
+        </table>
+
+        <button type='button' onclick='printGrades()'>Calculate</button>
+
+    </div>
+    <div style='text-align: center;font-size:20px;color:red;font-family: Franklin Gothic Medium'>
+        <p style='color:black;font-size:40px;'>
+        Final Grade:</p>
+        <p id='outputText'></p>
+        <p id='test'></p>
+    </div>
+</body>
+
+</html>
